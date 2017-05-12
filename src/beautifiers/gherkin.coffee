@@ -3,7 +3,7 @@
 
 "use strict"
 Beautifier = require('./beautifier')
-Lexer = require('gherkin').Lexer('en')
+Lexer = require('gherkin').Lexer('ru')
 logger = require('../logger')(__filename)
 
 module.exports = class Gherkin extends Beautifier
