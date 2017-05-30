@@ -4193,10 +4193,19 @@
       "Latex Beautify"
     ],
     "grammars": [
-      "LaTeX"
+      "BibTeX",
+      "LaTeX",
+      "TeX"
     ],
     "extensions": [
-      "tex"
+      "bib",
+      "tex",
+      "sty",
+      "cls",
+      "dtx",
+      "ins",
+      "bbx",
+      "cbx"
     ],
     "properties": {
       "indent_char": {
@@ -4567,6 +4576,25 @@
       "lua"
     ],
     "properties": {
+      "end_of_line": {
+        "type": "string",
+        "default": "System Default",
+        "enum": [
+          "CRLF",
+          "LF",
+          "System Default"
+        ],
+        "description": "Override EOL from line-ending-selector (Supported by Lua beautifier)",
+        "title": "End of line",
+        "beautifiers": [
+          "Lua beautifier"
+        ],
+        "key": "end_of_line",
+        "language": {
+          "name": "Lua",
+          "namespace": "lua"
+        }
+      },
       "disabled": {
         "title": "Disable Beautifying Language",
         "order": -3,
@@ -5716,7 +5744,11 @@
       "Perl 6"
     ],
     "extensions": [
-      "pl"
+      "pl",
+      "PL",
+      "pm",
+      "pod",
+      "t"
     ],
     "properties": {
       "perltidy_profile": {
@@ -5810,6 +5842,20 @@
         },
         "description": " (Supported by PHP-CS-Fixer)"
       },
+      "cs_fixer_config_file": {
+        "title": "PHP-CS-Fixer Config File",
+        "type": "string",
+        "default": "",
+        "description": "Path to php-cs-fixer config file. Will use local `.php_cs` or `.php_cs.dist` if found in the working directory or project root. (Supported by PHP-CS-Fixer)",
+        "beautifiers": [
+          "PHP-CS-Fixer"
+        ],
+        "key": "cs_fixer_config_file",
+        "language": {
+          "name": "PHP",
+          "namespace": "php"
+        }
+      },
       "fixers": {
         "type": "string",
         "default": "",
@@ -5860,7 +5906,7 @@
           "no",
           "yes"
         ],
-        "description": "allow risky rules to be applied (PHP-CS-Fixer 2 only) (Supported by PHP-CS-Fixer)",
+        "description": "Allow risky rules to be applied (PHP-CS-Fixer 2 only) (Supported by PHP-CS-Fixer)",
         "beautifiers": [
           "PHP-CS-Fixer"
         ],
@@ -8604,7 +8650,8 @@
       "jsp",
       "gsp",
       "plist",
-      "recipe"
+      "recipe",
+      "config"
     ],
     "properties": {
       "indent_inner_html": {
@@ -9037,7 +9084,7 @@
     "properties": {
       "padding": {
         "type": "integer",
-        "default": null,
+        "default": 0,
         "minimum": 0,
         "description": "The amount of padding to add next to each line. (Supported by align-yaml)",
         "title": "Padding",
